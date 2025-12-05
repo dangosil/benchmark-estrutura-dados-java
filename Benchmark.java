@@ -1,6 +1,6 @@
 import estruturas.Vetor;
 import util.GeradorDados;
-
+import ordenacao.SelectionSort;
 import java.util.Arrays;
 public class Benchmark {
     public static void main(String[] args) {
@@ -23,6 +23,28 @@ public class Benchmark {
 
         System.out.println("Buscando " + busca1 + ": Indice encontrado = " + vetorAleatorio.buscaSequencial(busca1));
         System.out.println("Buscando " + busca2 + ": Indice encontrado = " + vetorAleatorio.buscaSequencial(busca2));
+
+        System.out.println("\n--------------------------------------------------\n");
+
+        System.out.println("TESTE 1.5: Ordenando o vetor aleatorio com Selection Sort");
+
+        SelectionSort selection = new SelectionSort();
+
+        long inicio = System.nanoTime();
+
+        selection.ordenar(vetorAleatorio);
+
+        long fim = System.nanoTime();
+        System.out.println("Tempo de Ordenação: " + (fim - inicio) + " nanosegundos");
+
+        System.out.print("Vetor Agora Ordenado: [ ");
+        for(int i = 0; i < vetorAleatorio.getTamanho(); i++) {
+            System.out.print(vetorAleatorio.pegarNoIndice(i) + ", ");
+        }
+        System.out.println("]");
+
+        int resultadoPosOrdenacao = vetorAleatorio.pesquisaBinaria(busca1);
+        System.out.println("Busca Binária pós-ordenação (valor " + busca1 + "): Indice " + resultadoPosOrdenacao);
 
         System.out.println("\n--------------------------------------------------\n");
     
