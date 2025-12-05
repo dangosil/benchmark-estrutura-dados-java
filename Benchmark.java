@@ -72,7 +72,7 @@ public class Benchmark {
     }
 
     private static void executarBateriaOrdenacao() {
-        System.out.println(">>> 3. TESTES DE ORDENACAO (Selection vs QuickSort) <<<");
+        System.out.println(">>> 2. TESTES DE ORDENACAO (Selection vs QuickSort) <<<");
         System.out.printf("%-10s | %-12s | %-15s | %-15s\n", "Tamanho", "Cenario", "Selection(ns)", "QuickSort(ns)");
         System.out.println("----------------------------------------------------------------------");
 
